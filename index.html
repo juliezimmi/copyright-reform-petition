@@ -12,31 +12,57 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #fde6d8;
       color: #4a2c2a;
       text-align: center;
+      min-height: 100vh;
+      /* Red gradient background */
+      background: linear-gradient(135deg, #ff4d4d, #ff9999);
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Subtle polygon pattern overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-image: 
+        repeating-radial-gradient(circle at 20% 20%, rgba(255,255,255,0.02) 0, rgba(255,255,255,0.02) 2px, transparent 2px, transparent 20px),
+        repeating-radial-gradient(circle at 80% 80%, rgba(255,255,255,0.02) 0, rgba(255,255,255,0.02) 2px, transparent 2px, transparent 20px);
+      z-index: 0;
+      pointer-events: none;
     }
 
     .header {
-      background-color: #ff9a9a;
+      background-color: #b30000;
       padding: 20px;
-      font-size: 26px;
+      font-size: 28px;
       font-weight: bold;
       color: white;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+      z-index: 1;
     }
 
     .content {
-      background-color: #fde6d8;
+      background-color: rgba(255, 255, 255, 0.95);
       padding: 30px 20px;
       max-width: 700px;
-      margin: auto;
+      margin: 30px auto;
       text-align: left;
       line-height: 1.6;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      position: relative;
+      z-index: 1;
     }
 
     .content h2 {
       text-align: center;
       margin-bottom: 20px;
+      color: #b30000;
     }
 
     .buttons {
@@ -48,22 +74,34 @@
       display: inline-block;
       margin: 10px;
       padding: 12px 20px;
-      background-color: #ff7f7f;
+      background-color: #ff4d4d;
       color: white;
       text-decoration: none;
       border-radius: 6px;
       font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #e60000;
     }
 
     .btn.telegram {
       background-color: #2aa9e0;
     }
 
+    .btn.telegram:hover {
+      background-color: #1a7fbf;
+    }
+
     .footer {
-      background-color: #ff9a9a;
+      background-color: #b30000;
       color: white;
       padding: 15px;
       font-size: 14px;
+      margin-top: 30px;
+      position: relative;
+      z-index: 1;
     }
   </style>
 </head>
@@ -82,7 +120,7 @@
       <strong>Lawrence Lessig, Rick Falkvinge, Cory Doctorow</strong>, and others.
     </p>
 
-    <p><strong>Reasons I believe copyright needs reform or should end completely:</strong></p>
+    <p><strong>Reasons I believe copyright needs reform:</strong></p>
 
     <ol>
       <li>
